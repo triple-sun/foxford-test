@@ -9,6 +9,10 @@ export class ResponseRepository {
   ) {}
 
   public async findMany(): Promise<IUserResponse[]> {
-    return this.prismaService.userResponse.findMany();
+    return this.prismaService.userResponse.findMany({
+      orderBy: {
+        id: 'asc'
+      }
+    });
   }
 }

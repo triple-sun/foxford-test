@@ -3,26 +3,30 @@ import { Box, Container, CssBaseline } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
-import useFoundUsers from '../hooks/use-found-users';
+import useResponses from '../hooks/use-found-users';
 import FoundUsersTableComponent from '../components/responses/responses';
 import Loading from '../components/loading/loading';
+import { ruRU } from '@mui/x-data-grid';
 
-const Theme = createTheme({
-  palette: {
-    primary: {
-      main: '#556cd6',
-    },
-    secondary: {
-      main: '#19857b',
-    },
-    error: {
-      main: red.A400,
+const Theme = createTheme(
+  {
+    palette: {
+      primary: {
+        main: '#556cd6',
+      },
+      secondary: {
+        main: '#19857b',
+      },
+      error: {
+        main: red.A400,
+      },
     },
   },
-});
+  ruRU
+);
 
 const MainPage = () => {
-  const { responses, isLoaded } = useFoundUsers();
+  const { responses, isLoaded } = useResponses();
 
   return (
     <ThemeProvider theme={Theme}>

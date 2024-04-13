@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
 import {
-  getAreResponsesLoaded,
   getResponses,
 } from '../store/responses/responses.selectors';
 import useAppSelector from './use-app-selector';
@@ -9,7 +8,7 @@ import { fetchResponsesAction } from '../store/responses/responses.api.actions';
 
 type TResponsesQuery = { page?: number };
 
-const useFoundUsers = () => {
+const useResponses = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const responses = useAppSelector(getResponses);
@@ -25,8 +24,8 @@ const useFoundUsers = () => {
   );
 
   useEffect(() => {
-    fetchResponses({})
-    setIsLoaded(true)
+    fetchResponses({});
+    setIsLoaded(true);
   }, [isLoaded]);
 
   return {
@@ -35,4 +34,4 @@ const useFoundUsers = () => {
   };
 };
 
-export default useFoundUsers;
+export default useResponses;

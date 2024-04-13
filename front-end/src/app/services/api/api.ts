@@ -25,10 +25,7 @@ export const createAPI = (): AxiosInstance => {
 
   const api = axios.create({
     baseURL: API_URL,
-    timeout: parseInt(REQ_TIMEOUT),
-    headers: {
-      'Access-Control-Allow-Origin': '*'
-    }
+    timeout: parseInt(REQ_TIMEOUT)
   });
 
   api.interceptors.response.use(
