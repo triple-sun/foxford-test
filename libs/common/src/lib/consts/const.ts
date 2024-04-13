@@ -6,7 +6,7 @@ export const RESPONSES_PER_PAGE = 30;
 export const BOT_PORT_DEFAULT = 3000;
 
 export const emailRegExp =
-  /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail)\.com$/;
+  /^[a-zA-Z0-9_.+-]+(@foxford)\.ru$/;
 
 export const questionBlocks = [
   {

@@ -30,6 +30,14 @@ const sendQuestion = async (userId: string) => {
   }
 };
 
+if (
+  !process.env.APP_TOKEN ||
+  !process.env.SLACK_BOT_TOKEN ||
+  !process.env.DATABASE_URL
+) {
+  throw new Error('Ошибка загрузки переменных окружения!');
+}
+
 app.action<BlockAction>(
   'yes',
   async ({
